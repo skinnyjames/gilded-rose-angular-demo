@@ -1,0 +1,38 @@
+
+:host /deep/ html, body {
+  margin: 0;
+  height: 100vh;
+}
+div#gilded__rose {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.error {
+  color: red;
+}
+div#gilded__rose__items {
+  width: 40%;
+  max-height: 50%;
+  overflow-y: scroll;
+}
+
+div#gilded__rose__props div {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+div#gilded__rose__props label, div#gilded__rose__props button {
+  font-size: 16px;
+}
+div#gilded__rose label {
+  margin-right: 10px;
+}
+div#gilded__rose__props input {
+  width: 200px;
+}
+div#gilded__rose__props button {
+  width: 100%;
+}

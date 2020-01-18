@@ -1,16 +1,26 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ShopService } from './services/shop.service';
+import { ItemService } from './services/item.service';
 
 describe('AppComponent', () => {
+
+  fixture: ComponentFixture;
+
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
+      providers: [
+        ShopService,
+        ItemService
+      ]
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
+  it('', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
