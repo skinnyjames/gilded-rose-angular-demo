@@ -3,8 +3,8 @@ import { Item } from './item.service';
 export class ShopService {
   private items = [];
 
-  addItems(items: Item) {
-    this.items = this.items.concat(items);
+  addItem(item: Item) {
+    this.items.push(item);
   }
 
   getItems(): Array<Item> {

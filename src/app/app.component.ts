@@ -36,15 +36,13 @@ export class AppComponent implements OnInit {
   ){}
 
   addItem() {
-    const name = this.currentItem.name;
-    const sellInDate = moment(this.currentItem.sellIn, 'MM/DD/YYYY');
-    const sellIn = moment.duration(sellInDate.diff(this.currentDay)).asDays();
-    console.log(sellIn);
-    const quality = this.currentItem.quality;
-
     if (this.validate()) {
+      const name = this.currentItem.name;
+      const sellInDate = moment(this.currentItem.sellIn, 'MM/DD/YYYY');
+      const sellIn = moment.duration(sellInDate.diff(this.currentDay)).asDays();
+      const quality = this.currentItem.quality;
       const item = ItemService.generate(name, sellIn, quality);
-      this.shopService.addItems(item);
+      this.shopService.addItem(item);
       this.resetCurrentItem();
     }
   }
@@ -62,7 +60,6 @@ export class AppComponent implements OnInit {
       });
       return false;
     }
-    
     return true;
   }
 
@@ -106,6 +103,13 @@ export class AppComponent implements OnInit {
             condition: (date.isValid() && date.isAfter(this.currentDay)),
             fields: ['sellIn'],
             message: 'Sell In must be a valid date after the current day'
+          }
+        },
+        (currentItem) => {
+          return {
+            condition: (currentItem.quality >= 0 && currentItem.quality <= 50),
+            fields: ['quality'],
+            message: 'Quality must be between 0 and 50'
           }
         }
       ]

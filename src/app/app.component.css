@@ -15,8 +15,12 @@ div#gilded__rose {
 }
 div#gilded__rose__items {
   width: 40%;
-  max-height: 50%;
+  max-height: 100%;
   overflow-y: scroll;
+}
+
+div#gilded__rose__props, div#gilded__rose__items {
+  min-height: 100%;
 }
 
 div#gilded__rose__props div {

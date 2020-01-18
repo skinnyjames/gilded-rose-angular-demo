@@ -13,3 +13,7 @@ install node modules
 serve the app
 
 `ng serve`
+
+run the tests
+
+`ng test`
